@@ -1,35 +1,47 @@
 ---
+# ⚠️ IMPORTANT: Keep description on ONE line only — multi-line breaks the skill silently with no error
 name: your-skill-name
 description: One single line description of what this skill does and when to use it
+version: 1.0.0
+last_updated: 2026-03-13
 compatible_agents:
-  - claude
-  - copilot
+  tested:
+    - claude
+  untested:
+    - copilot
+    - cursor
+    - vscode
+    - codex
 categories:
   - development
 job_roles:
   - developer
 author: Your Name
-github: yourusername
-x: yourhandle
+github: your-github-username
+twitter_x: your-x-handle
 license: apache-2.0
 ---
 
-# Your Skill Name
+## What this skill does
 
-[Your instructions here — what should the agent do when this skill is active?]
+Explain what this skill does in plain English. What problem does it solve?
 
-## Trigger Phrases
-Exactly what to say to invoke this skill:
-- "Use the [skill-name] skill to..."
-- "[Specific phrase that reliably triggers it]"
+## When to use it
 
-## Examples
-- Example usage 1
-- Example usage 2
+Describe the situations where this skill is most useful.
 
-## Guidelines
-- Guideline 1
-- Guideline 2
+## Trigger phrases
 
-## Known Issues
-- Any platform-specific quirks or incompatibilities
+List the kinds of prompts or requests that will activate this skill:
+
+- "Help me with..."
+- "Optimise my..."
+- "Review this..."
+
+## Example
+
+Show a before/after or a sample interaction so people know what to expect.
+
+## Notes
+
+Any caveats, limitations, or tips for getting the best results.
