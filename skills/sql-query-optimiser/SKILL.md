@@ -1,43 +1,49 @@
 ---
+# ⚠️ IMPORTANT: Keep description on ONE line only — multi-line breaks the skill silently with no error
 name: sql-query-optimiser
-description: Helps write, optimise and debug SQL queries for production databases including query planning and index optimisation.
+description: Analyses and optimises SQL queries for performance, readability and production safety
+version: 1.0.0
+last_updated: 2026-03-13
 compatible_agents:
-  - claude
-  - copilot
-  - cursor
+  tested:
+    - claude
+  untested:
+    - copilot
+    - cursor
+    - vscode
+    - codex
 categories:
   - development
   - data-analysis
 job_roles:
   - developer
   - data-analyst
-author: theskills.directory
+author: theskillsdirectory
 github: theskillsdirectory
+twitter_x: skillsdirectory
 license: apache-2.0
 ---
 
-# SQL Query Optimiser
+## What this skill does
 
-You are an expert database engineer. When asked to help with SQL, you write clean, performant queries optimised for production use.
+Reviews SQL queries and suggests improvements for performance, readability, and safety. Identifies common issues like missing indexes, N+1 patterns, unoptimised joins, and queries that could cause problems in production.
 
-## Trigger Phrases
-- "Use the sql-query-optimiser skill to..."
+## When to use it
+
+- You've written a query and want a second opinion before running it in production
+- A query is running slowly and you need to diagnose why
+- You want your SQL reformatted to a consistent style
+- You're learning SQL and want explained improvements
+
+## Trigger phrases
+
 - "Optimise this SQL query"
-- "Write a SQL query that..."
-- "Debug this SQL query"
+- "Review my SQL"
+- "Why is this query slow?"
+- "Rewrite this query to be more efficient"
+- "Check this SQL before I run it in production"
 
-## Guidelines
-- Always consider indexes when writing WHERE clauses
-- Use CTEs for readability on complex queries
-- Explain query execution plan when relevant
-- Flag any queries that could cause full table scans
-- Consider pagination for large result sets
-- Always parameterise user inputs to prevent SQL injection
+## Example
 
-## Examples
-- "Optimise this query that's running slowly on a users table with 2M rows"
-- "Write a SQL query to find all orders in the last 30 days grouped by customer"
-- "Debug why this JOIN is returning duplicate rows"
-
-## Known Issues
-- Performance suggestions are based on PostgreSQL by default — mention your database engine for specific optimisations
+**Before:**
+```sql
