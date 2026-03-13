@@ -1,0 +1,24 @@
+## Skill Submission
+
+**Skill name:**
+**Category:**
+**Compatible agents tested on:**
+
+---
+
+## Checklist
+
+- [ ] Description is a single line — multi-line breaks the skill silently
+- [ ] Tested on at least one agent listed above
+- [ ] Trigger phrases included in the skill body
+- [ ] No API keys or sensitive data included
+- [ ] `version` and `last_updated` fields are filled in
+- [ ] `license` field is filled in
+- [ ] This is my own work or properly attributed open source content
+- [ ] I have the right to share this under the stated license
+
+---
+
+## Notes for reviewer
+
+Anything else the maintainer should know about this skill?
