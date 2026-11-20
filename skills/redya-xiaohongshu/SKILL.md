@@ -22,6 +22,8 @@ github: rnthking
 license: mit
 ---
 
+# 小红书图文与实况图·红鸦 AI
+
 ## What this skill does
 
 **Xiaohongshu Posts & Live Photos · RedYA AI** (小红书图文与实况图·红鸦 AI) creates Xiaohongshu post copy and multi-image posts, builds posts around products, makes Live Photos, and checks sensitive wording. The [maintained source](https://github.com/rnthking/redya-skills/tree/main/skill/redya-xiaohongshu) is open source.
