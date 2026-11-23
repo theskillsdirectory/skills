@@ -1,7 +1,7 @@
 ---
 name: musvideo
 description: Create music videos with MusVideo from a song or Suno link. Use when the user wants to make an MV, approve a MusVideo story, render a video, check project progress, find finished MusVideo videos, or check their MusVideo credits. Requires the MusVideo MCP connection and the user's own account.
-version: 1.0.0
+version: 1.0.1
 last_updated: 2026-11-23
 compatible_agents:
   tested:
@@ -34,7 +34,7 @@ For an existing project, use its saved `projectId` or `list_my_videos` and then 
 
 ## Create an MV
 
-1. Get a song the user has the right to use. Call `import_song` with a public HTTPS `audioUrl` (direct MP3/WAV/M4A/FLAC/OGG or public Suno song page). In ChatGPT, use `file` only when the host supplies the real attachment's `download_url` and `file_id`. Never fabricate these or pass a local filename as a URL. Other hosts should use an audio URL; do not upload private audio elsewhere without the user's authorization. Importing costs no credits.
+1. Get a song the user has the right to use. Before importing, confirm that the user authorized sending this exact song URL or attachment to MusVideo for processing. An explicit request to use MusVideo with that source is authorization; otherwise explain the transfer to MusVideo and ask first. Connecting an account, providing an attachment without that instruction, or approving a later credit charge is not import authorization. Call `import_song` with a public HTTPS `audioUrl` (direct MP3/WAV/M4A/FLAC/OGG or public Suno song page). In ChatGPT, use `file` only when the host supplies the real attachment's `download_url` and `file_id`. Never fabricate these or pass a local filename as a URL. Other hosts should use an audio URL; do not upload private audio elsewhere without the user's authorization. Importing costs no credits.
 2. Ask only for missing creative choices: look, mood, setting, story, and 16:9 landscape or 9:16 vertical (default 16:9). Explain that analysis and story creation currently cost **6 credits** and wait for explicit approval. If the live tool description or response reports a different cost, use that cost and ask again. Then call `create_mv_project` with `songId`, the chosen options and a fresh `requestId`. Save the request ID before calling. Reuse it on a retry; never issue a new ID to recover an uncertain result.
 3. Call `get_mv_progress` when the user asks or after a reasonable wait. At `story_ready`, summarize the actual synopsis and look, then ask for approval or edits. Do not treat the initial 6-credit approval as story approval.
 4. After the user sees and approves the story, call `approve_story` with `projectId` and any requested `feedback`. No extra credits are charged for this step. Wait for `storyboard_ready`.
@@ -62,6 +62,6 @@ Example: after connecting your own MusVideo account, ask "Use MusVideo to make a
 
 ## Distribution and verification notes
 
-Canonical source: [tjsdyy/MusVideoSkills](https://github.com/tjsdyy/MusVideoSkills), release v0.1.0. This directory entry is revision 1.0.0 of that release's adapted metadata; it is not a new service release. The bundled MIT license applies to these public integration files. The hosted service requires a user account and credits; installing the skill does not include free video generation.
+Canonical source: [tjsdyy/MusVideoSkills](https://github.com/tjsdyy/MusVideoSkills), release v0.1.1. This directory entry is revision 1.0.1 of that release's adapted metadata; it is not a new service release. The bundled MIT license applies to these public integration files. The hosted service requires a user account and credits; installing the skill does not include free video generation.
 
 Claude Code plugin installation and native OAuth, and Codex skill installation, native OAuth and read-only calls were tested. Full paid MV creation was verified in ChatGPT; it has not been repeated end-to-end in every listed client. Cursor, VS Code and Copilot configuration examples are unverified in their interfaces. See the canonical [verification record](https://github.com/tjsdyy/MusVideoSkills/blob/main/docs/verification.md).
